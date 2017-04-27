@@ -1,0 +1,11 @@
+.DS_Store
+
+node_modules/
+.config.json
+
+settings.js
+.flows_mac.json.backup
+flows_mac.json
+npm-debug.log
+/package.json
+/lib
