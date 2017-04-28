@@ -10,7 +10,7 @@ module.exports = function(RED) {
     node.status({fill:'red', shape:'ring', text:'Error'});
   }
 
-  function compress(filename) {
+  function decompress(filename) {
     const p = path.parse(filename);
 
     var d = require('domain').create();
@@ -22,7 +22,7 @@ module.exports = function(RED) {
     })
   }
 
-  function uncompress(filename) {
+  function decompress(filename) {
     const outFile = path.dirname(filename);
 
     var d = require('domain').create();
@@ -53,7 +53,7 @@ module.exports = function(RED) {
           var p = path.parse(filename); // {root, dir, base, ext, name}
           if (p.ext === '.xz') {
             if (path.extname(p.name) === '.tar') {
-              uncompress(filename);
+              decompress(filename);
             } else {
               node.error('Invalid file format (not tar)');
             }
